@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Умный дом: WEB-приложение</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="selectbox" class="selectbox">
+        <div class="selectbox__selected">
+            <span>Все комнаты</span>
+            <i class="icon-arrow"></i>
+        </div>
+        <div class="selectbox__list">
+            <div data-room="all" class="selectbox__item selected">Все комнаты</div>
+            <div data-room="livingroom" class="selectbox__item">Зал</div>
+            <div data-room="bedroom" class="selectbox__item">Спальня</div>
+            <div data-room="kitchen" class="selectbox__item">Кухня</div>
+            <div data-room="bathroom" class="selectbox__item">Ванная</div>
+            <div data-room="studio" class="selectbox__item">Кабинет</div>
+            <div data-room="washingroom" class="selectbox__item">Уборная</div>
+        </div>
+    </div>
+    <div id="rooms" class="rooms">
+        <div data-room="livingroom" class="room">
+            <i class="icon-livingroom"></i>
+            <span>
+                Зал
+            </span>
+        </div>
+        <div data-room="bedroom" class="room">
+            <i class="icon-bedroom"></i>
+            <span>
+                Спальня
+            </span>
+        </div>
+        <div data-room="kitchen" class="room">
+            <i class="icon-kitchen"></i>
+            <span>
+                Кухня
+            </span>
+        </div>
+        <div data-room="bathroom" class="room">
+            <i class="icon-bathroom"></i>
+            <span>
+                Ванная
+            </span>
+        </div>
+        <div data-room="studio" class="room">
+            <i class="icon-studio"></i>
+            <span>
+                Кабинет
+            </span>
+        </div>
+        <div data-room="washingroom" class="room">
+            <i class="icon-washingroom"></i>
+            <span>
+                Уборная
+            </span>
+        </div>
+    </div>
+    <div id="options" class="options">
+        <div class="options__tabs">
+            <div data-type="temperature" class="option selected">
+                <i class="icon-temperature"></i>
+                <span>Температура</span>
+            </div>
+            <div data-type="lights" class="option">
+                <i class="icon-lights"></i>
+                <span>Свет</span>
+            </div>
+            <div data-type="humidity" class="option">
+                <i class="icon-humidity"></i>
+                <span>Влажность</span>
+            </div>
+        </div>
+        <div class="settings__screens">
+            <div data-type="temperature" class="settings__screen active">
+                <div class="settings__screen-title">Температура</div>
+                <div class="settings__screen-icon">°С</div>
+                <div class="slider">
+                    <div id = "temperatureSlider" class="slider__progress">
+                        <span>21</span>°С
+                    </div>
+                </div>
+                <div id = "switchT" class="switch">
+                    <div class = "on"></div>
+                </div>
+            </div>
+            <div data-type="lights" class="settings__screen">
+                <div class="settings__screen-title">Интенсивность</div>
+                <div class="settings__screen-icon">
+                    <i class="icon-sun"></i>
+                </div>
+                <div class="slider">
+                    <div id = "lightsSlider" class="slider__progress">
+                        <span>45</span>%
+                    </div>
+                    
+                </div>
+                <div id = "switchL" class="switch">
+                    <div class = "on"></div>
+                </div>
+            </div>
+            <div data-type="humidity" class="settings__screen">
+                <div class="settings__screen-title">Влажность</div>
+                <div class="settings__screen-icon">%</div>
+                <div class="slider">
+                    <div id = "humiditySlider" class="slider__progress">
+                        <span>45</span>%
+                    </div>
+                    
+                </div>
+                <div id = "switchH" class="switch">
+                    <div class = "on"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

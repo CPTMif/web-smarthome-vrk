@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("./fonts/icons/style.css");
+
+:root{
+    --color_bg: #e5ebeb;
+    --gradient: linear-gradient(to right, #0ba5a5, #046868);
+    --color_grey: #f0f0f0;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--color_bg);
+    height: 100vh;
+    display: grid;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+body h1{
+    color:#046868;
+    margin:10px;
+}
+
+.rooms {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    justify-content: center;
+    width: 70vh;
+    align-items: center;
+    grid-gap: 20px;
+    transition: all 0.3s ease-in-out;
+}
+.room.selected{
+    background: var(--gradient);
+    color: white;
+}
+.room.selected i{
+    opacity: 1;
+}
+.room {
+    cursor: pointer;
+    display: grid;
+    grid-template-rows: 130px 30px;
+    align-items: center;
+    font-size: 16px;
+    text-align: center;
+    background-color: white;
+    border-radius: 12px;
+}
+.room i{
+    align-self: center;
+    font-size: 5em;
+    opacity: 0.7;
+    
+}
+
+/*Полоска*/
+.slider {
+    cursor: pointer;
+    width: 100px;
+    height: 250px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+}
+.slider__progress.on{
+    background: var(--gradient);
+}
+
+.slider__progress{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #666;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    min-height: 20%;
+    height: 70%;
+}
+
+.switch {
+    cursor: pointer;
+    width: 60px;
+    height: 28px;
+    border-radius: 60px;
+    background-color: white;
+    margin: 30px auto 0;
+    position: relative;
+}
+.switch div.on{
+    left: 40px;
+    background: var(--gradient);
+}
+.switch div{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 28px;
+    background: #666;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Компоненты */
+.selectbox {
+    width: max-content;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 25px;
+}
+.selectbox__selected {
+    font-size: 18pt;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    border-radius: 3px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+.selectbox.open .icon-arrow{
+    transform: rotate(-180deg);
+}
+.icon-arrow {
+    display: inline-block;
+    font-size: 0.7em;
+    margin-left: 10px;
+    transform: rotate(0deg);
+    transition: all 0.3s ease-in-out;
+}
+
+.selectbox.open .selectbox__list{
+    top: 120%;
+    max-height: 200px;
+    background-color: white;
+    z-index: 1;
+}
+.selectbox__list {
+    position: absolute;
+    top: 0;
+    left: -12px;
+    right: -12px;
+    background-color: var(--color_bg);
+    border-radius: 3px;
+    padding: 8px 12px;
+    overflow: hidden;
+    max-height: 0px;
+    
+    transition: all 0.3s ease-in-out;
+}
+.selectbox__item {
+    cursor: pointer;
+}
+.selectbox__item.selected,
+.selectbox__item:hover {
+    color:#046868;
+    font-weight: bold;
+}
+.selectbox__item:not(:last-child) {
+    margin-bottom: 4px;
+}
+
+/*Раздел настроек*/
+.options{
+    padding: 0 20px;
+    display: none;
+}
+.options__tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px;
+    justify-content: center;
+    width: 70vh;
+    
+    align-items: center;
+    grid-gap: 20px;
+    transition: all 0.3s ease-in-out;
+}
+.option.selected{
+    background: var(--gradient);
+    color: white;
+}
+.option.selected i{
+    opacity: 1;
+}
+.option {
+    cursor: pointer;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    padding: 10px;
+    align-items: center;
+    font-size: 12px;
+    text-align: center;
+    background-color: white;
+    border-radius: 12px;
+}
+.option i{
+    align-self: center;
+    font-size: 3em;
+    opacity: 0.7;
+    
+}
+
+.settings__screens {
+    position: relative;
+    margin: 30px;
+    height: 60vh;
+}
+.settings__screen.active{
+    display: block;
+}
+.settings__screen {
+    display: none;
+}
+.settings__screen-icon {
+    margin: 10px;
+    font-size: 30px;
+    color: #666;
+    text-align: center;
+}
+.settings__screen-title {
+    text-align: center;
+}
